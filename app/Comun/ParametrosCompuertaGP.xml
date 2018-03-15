@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<listaParametros>
+  <servidor defaultDB="INTEGRA50">wwsqlad.centralus.cloudapp.azure.com,1433</servidor>
+  <seguridadIntegrada>0</seguridadIntegrada>
+  <usuariosql>sa</usuariosql>
+  <passwordsql>na</passwordsql>
+  <compannia bd="INTEGRA10" nombre="PROD INTEGRACIONES WORKING WOMEN" metadata="metadata=res://*/DAL.ModelGPIntegraciones.csdl|res://*/DAL.ModelGPIntegraciones.ssdl|res://*/DAL.ModelGPIntegraciones.msl;provider=System.Data.SqlClient;">
+    <TargetGPDB>PRO12</TargetGPDB>
+  </compannia>
+  <compannia bd="INTEGRA50" nombre="TEST INTEGRACIONES WORKING WOMEN" metadata="metadata=res://*/DAL.ModelGPIntegraciones.csdl|res://*/DAL.ModelGPIntegraciones.ssdl|res://*/DAL.ModelGPIntegraciones.msl;provider=System.Data.SqlClient;">
+    <TargetGPDB>TST12</TargetGPDB>
+  </compannia>
+</listaParametros>
+
