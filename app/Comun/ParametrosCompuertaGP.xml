@@ -3,7 +3,7 @@
   <servidor defaultDB="INTEGRA50">wwsqlad.centralus.cloudapp.azure.com,1433</servidor>
   <seguridadIntegrada>0</seguridadIntegrada>
   <usuariosql>sa</usuariosql>
-  <passwordsql>tiiSelam$18</passwordsql>
+  <passwordsql>na</passwordsql>
   <compannia bd="INTEGRA10" nombre="PROD INTEGRACIONES WORKING WOMEN" metadata="metadata=res://*/DAL.ModelGPIntegraciones.csdl|res://*/DAL.ModelGPIntegraciones.ssdl|res://*/DAL.ModelGPIntegraciones.msl;provider=System.Data.SqlClient;">
     <TargetGPDB>PRO12</TargetGPDB>
   </compannia>
