@@ -31,6 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(winFormCompuertaGPBase));
             this.dgvFacturas = new System.Windows.Forms.DataGridView();
+            this.dgvPacientes_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FECHADOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPODOCARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMDOCARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TIPODOCGP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NUMDOCGP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COL8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OBSERVACIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MENSAJE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MENSAJELARGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbBEstado = new System.Windows.Forms.ComboBox();
             this.checkBoxEstado = new System.Windows.Forms.CheckBox();
             this.checkBoxPacientes_numero_pf = new System.Windows.Forms.CheckBox();
@@ -78,6 +90,8 @@
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripAcciones4 = new System.Windows.Forms.ToolStrip();
+            this.tsSplitBCambiarStatus = new System.Windows.Forms.ToolStripSplitButton();
+            this.tsMenuItemCambiarAListo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripAcciones3 = new System.Windows.Forms.ToolStrip();
             this.tsBtnIntegraFactura = new System.Windows.Forms.ToolStripButton();
             this.toolStripAcciones1 = new System.Windows.Forms.ToolStrip();
@@ -104,20 +118,8 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tsSplitBCambiarStatus = new System.Windows.Forms.ToolStripSplitButton();
-            this.tsMenuItemCambiarAListo = new System.Windows.Forms.ToolStripMenuItem();
-            this.dgvPacientes_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FECHADOC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIPODOCARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMDOCARN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TIPODOCGP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMDOCGP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COL8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OBSERVACIONES = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MENSAJE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MENSAJELARGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsbActualizarStatus = new System.Windows.Forms.ToolStripButton();
+            this.anuleDespuesDeContabilizadaTsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tsConfirma1.SuspendLayout();
@@ -173,6 +175,120 @@
             this.dgvFacturas.TabIndex = 50;
             this.dgvFacturas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPacientes_CellDoubleClick);
             this.dgvFacturas.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvPacientes_CurrentCellDirtyStateChanged);
+            // 
+            // dgvPacientes_check
+            // 
+            this.dgvPacientes_check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvPacientes_check.FalseValue = "False";
+            this.dgvPacientes_check.HeaderText = "";
+            this.dgvPacientes_check.MinimumWidth = 20;
+            this.dgvPacientes_check.Name = "dgvPacientes_check";
+            this.dgvPacientes_check.ThreeState = true;
+            this.dgvPacientes_check.TrueValue = "True";
+            this.dgvPacientes_check.Visible = false;
+            this.dgvPacientes_check.Width = 20;
+            // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.ID.DataPropertyName = "ID";
+            this.ID.FillWeight = 20F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 43;
+            // 
+            // FECHADOC
+            // 
+            this.FECHADOC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.FECHADOC.DataPropertyName = "FECHADOC";
+            this.FECHADOC.FillWeight = 60F;
+            this.FECHADOC.HeaderText = "Fecha PF";
+            this.FECHADOC.Name = "FECHADOC";
+            this.FECHADOC.ReadOnly = true;
+            this.FECHADOC.Width = 78;
+            // 
+            // TIPODOCARN
+            // 
+            this.TIPODOCARN.DataPropertyName = "TIPODOCARN";
+            this.TIPODOCARN.HeaderText = "TIPODOCARN";
+            this.TIPODOCARN.Name = "TIPODOCARN";
+            this.TIPODOCARN.ReadOnly = true;
+            this.TIPODOCARN.Visible = false;
+            // 
+            // NUMDOCARN
+            // 
+            this.NUMDOCARN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NUMDOCARN.DataPropertyName = "NUMDOCARN";
+            this.NUMDOCARN.FillWeight = 60F;
+            this.NUMDOCARN.HeaderText = "Pre Factura";
+            this.NUMDOCARN.Name = "NUMDOCARN";
+            this.NUMDOCARN.ReadOnly = true;
+            this.NUMDOCARN.Width = 87;
+            // 
+            // TIPODOCGP
+            // 
+            this.TIPODOCGP.DataPropertyName = "TIPODOCGP";
+            this.TIPODOCGP.HeaderText = "TIPODOCGP";
+            this.TIPODOCGP.Name = "TIPODOCGP";
+            this.TIPODOCGP.ReadOnly = true;
+            this.TIPODOCGP.Visible = false;
+            // 
+            // NUMDOCGP
+            // 
+            this.NUMDOCGP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NUMDOCGP.DataPropertyName = "NUMDOCGP";
+            this.NUMDOCGP.FillWeight = 60F;
+            this.NUMDOCGP.HeaderText = "Factura GP";
+            this.NUMDOCGP.Name = "NUMDOCGP";
+            this.NUMDOCGP.ReadOnly = true;
+            this.NUMDOCGP.Width = 86;
+            // 
+            // IDCLIENTE
+            // 
+            this.IDCLIENTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.IDCLIENTE.DataPropertyName = "IDCLIENTE";
+            this.IDCLIENTE.FillWeight = 60F;
+            this.IDCLIENTE.HeaderText = "Id Cliente";
+            this.IDCLIENTE.Name = "IDCLIENTE";
+            this.IDCLIENTE.ReadOnly = true;
+            this.IDCLIENTE.Width = 76;
+            // 
+            // COL8
+            // 
+            this.COL8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.COL8.DataPropertyName = "DOCSTATUS";
+            this.COL8.FillWeight = 60F;
+            this.COL8.HeaderText = "Estado";
+            this.COL8.Name = "COL8";
+            this.COL8.ReadOnly = true;
+            this.COL8.Width = 65;
+            // 
+            // OBSERVACIONES
+            // 
+            this.OBSERVACIONES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.OBSERVACIONES.DataPropertyName = "OBSERVACIONES";
+            this.OBSERVACIONES.FillWeight = 60F;
+            this.OBSERVACIONES.HeaderText = "Referencia";
+            this.OBSERVACIONES.Name = "OBSERVACIONES";
+            this.OBSERVACIONES.Width = 84;
+            // 
+            // MENSAJE
+            // 
+            this.MENSAJE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.MENSAJE.DataPropertyName = "MENSAJE";
+            this.MENSAJE.FillWeight = 60F;
+            this.MENSAJE.HeaderText = "Mensaje";
+            this.MENSAJE.Name = "MENSAJE";
+            this.MENSAJE.Width = 72;
+            // 
+            // MENSAJELARGO
+            // 
+            this.MENSAJELARGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MENSAJELARGO.DataPropertyName = "MENSAJELARGO";
+            this.MENSAJELARGO.FillWeight = 337.4448F;
+            this.MENSAJELARGO.HeaderText = "Validaciones";
+            this.MENSAJELARGO.Name = "MENSAJELARGO";
+            this.MENSAJELARGO.ReadOnly = true;
             // 
             // cmbBEstado
             // 
@@ -497,9 +613,9 @@
             // toolStripAcciones8
             // 
             this.toolStripAcciones8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripAcciones8.Location = new System.Drawing.Point(325, 25);
+            this.toolStripAcciones8.Location = new System.Drawing.Point(335, 25);
             this.toolStripAcciones8.Name = "toolStripAcciones8";
-            this.toolStripAcciones8.Size = new System.Drawing.Size(748, 63);
+            this.toolStripAcciones8.Size = new System.Drawing.Size(738, 63);
             this.toolStripAcciones8.TabIndex = 82;
             this.toolStripAcciones8.Text = "toolStrip1";
             // 
@@ -507,9 +623,9 @@
             // 
             this.tsAcciones7.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsDropDownFiltro});
-            this.tsAcciones7.Location = new System.Drawing.Point(325, 0);
+            this.tsAcciones7.Location = new System.Drawing.Point(335, 0);
             this.tsAcciones7.Name = "tsAcciones7";
-            this.tsAcciones7.Size = new System.Drawing.Size(748, 25);
+            this.tsAcciones7.Size = new System.Drawing.Size(738, 25);
             this.tsAcciones7.TabIndex = 81;
             this.tsAcciones7.Text = "toolStrip2";
             // 
@@ -577,7 +693,7 @@
             this.toolStripAcciones6.AutoSize = false;
             this.toolStripAcciones6.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStripAcciones6.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStripAcciones6.Location = new System.Drawing.Point(303, 0);
+            this.toolStripAcciones6.Location = new System.Drawing.Point(313, 0);
             this.toolStripAcciones6.Name = "toolStripAcciones6";
             this.toolStripAcciones6.Size = new System.Drawing.Size(22, 88);
             this.toolStripAcciones6.TabIndex = 74;
@@ -592,7 +708,7 @@
             this.toolStripButton12,
             this.toolStripButton13});
             this.toolStripAcciones5.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.toolStripAcciones5.Location = new System.Drawing.Point(271, 0);
+            this.toolStripAcciones5.Location = new System.Drawing.Point(281, 0);
             this.toolStripAcciones5.Name = "toolStripAcciones5";
             this.toolStripAcciones5.Size = new System.Drawing.Size(32, 88);
             this.toolStripAcciones5.TabIndex = 60;
@@ -630,13 +746,33 @@
             this.toolStripAcciones4.AutoSize = false;
             this.toolStripAcciones4.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStripAcciones4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsSplitBCambiarStatus});
+            this.tsSplitBCambiarStatus,
+            this.tsbActualizarStatus});
             this.toolStripAcciones4.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStripAcciones4.Location = new System.Drawing.Point(105, 0);
             this.toolStripAcciones4.Name = "toolStripAcciones4";
-            this.toolStripAcciones4.Size = new System.Drawing.Size(166, 88);
+            this.toolStripAcciones4.Size = new System.Drawing.Size(176, 88);
             this.toolStripAcciones4.TabIndex = 73;
             this.toolStripAcciones4.Text = "toolStripEmail";
+            // 
+            // tsSplitBCambiarStatus
+            // 
+            this.tsSplitBCambiarStatus.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMenuItemCambiarAListo,
+            this.anuleDespuesDeContabilizadaTsMenuItem});
+            this.tsSplitBCambiarStatus.Image = ((System.Drawing.Image)(resources.GetObject("tsSplitBCambiarStatus.Image")));
+            this.tsSplitBCambiarStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsSplitBCambiarStatus.Name = "tsSplitBCambiarStatus";
+            this.tsSplitBCambiarStatus.Size = new System.Drawing.Size(125, 20);
+            this.tsSplitBCambiarStatus.Text = "Para reintegrar...";
+            this.tsSplitBCambiarStatus.ToolTipText = "Cambiar estado del documento";
+            // 
+            // tsMenuItemCambiarAListo
+            // 
+            this.tsMenuItemCambiarAListo.Name = "tsMenuItemCambiarAListo";
+            this.tsMenuItemCambiarAListo.Size = new System.Drawing.Size(292, 22);
+            this.tsMenuItemCambiarAListo.Text = "Eliminé la factura en GP";
+            this.tsMenuItemCambiarAListo.Click += new System.EventHandler(this.tsMenuItemCambiarAListo_Click);
             // 
             // toolStripAcciones3
             // 
@@ -924,137 +1060,22 @@
             this.panel8.Size = new System.Drawing.Size(1127, 137);
             this.panel8.TabIndex = 81;
             // 
-            // tsSplitBCambiarStatus
+            // tsbActualizarStatus
             // 
-            this.tsSplitBCambiarStatus.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsMenuItemCambiarAListo});
-            this.tsSplitBCambiarStatus.Image = ((System.Drawing.Image)(resources.GetObject("tsSplitBCambiarStatus.Image")));
-            this.tsSplitBCambiarStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsSplitBCambiarStatus.Name = "tsSplitBCambiarStatus";
-            this.tsSplitBCambiarStatus.Size = new System.Drawing.Size(143, 20);
-            this.tsSplitBCambiarStatus.Text = "Cambiar estado a ...";
-            this.tsSplitBCambiarStatus.ToolTipText = "Cambiar estado del documento";
+            this.tsbActualizarStatus.Image = ((System.Drawing.Image)(resources.GetObject("tsbActualizarStatus.Image")));
+            this.tsbActualizarStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbActualizarStatus.Name = "tsbActualizarStatus";
+            this.tsbActualizarStatus.Size = new System.Drawing.Size(114, 20);
+            this.tsbActualizarStatus.Text = "Actualizar Status";
+            this.tsbActualizarStatus.ToolTipText = "Actualizar el status de las facturas contabilizadas";
+            this.tsbActualizarStatus.Click += new System.EventHandler(this.tsbActualizarStatus_Click);
             // 
-            // tsMenuItemCambiarAListo
+            // anuleDespuesDeContabilizadaTsMenuItem
             // 
-            this.tsMenuItemCambiarAListo.Name = "tsMenuItemCambiarAListo";
-            this.tsMenuItemCambiarAListo.Size = new System.Drawing.Size(152, 22);
-            this.tsMenuItemCambiarAListo.Text = "LISTO";
-            this.tsMenuItemCambiarAListo.Click += new System.EventHandler(this.tsMenuItemCambiarAListo_Click);
-            // 
-            // dgvPacientes_check
-            // 
-            this.dgvPacientes_check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvPacientes_check.FalseValue = "False";
-            this.dgvPacientes_check.HeaderText = "";
-            this.dgvPacientes_check.MinimumWidth = 20;
-            this.dgvPacientes_check.Name = "dgvPacientes_check";
-            this.dgvPacientes_check.ThreeState = true;
-            this.dgvPacientes_check.TrueValue = "True";
-            this.dgvPacientes_check.Visible = false;
-            this.dgvPacientes_check.Width = 20;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.ID.DataPropertyName = "ID";
-            this.ID.FillWeight = 20F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 43;
-            // 
-            // FECHADOC
-            // 
-            this.FECHADOC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.FECHADOC.DataPropertyName = "FECHADOC";
-            this.FECHADOC.FillWeight = 60F;
-            this.FECHADOC.HeaderText = "Fecha PF";
-            this.FECHADOC.Name = "FECHADOC";
-            this.FECHADOC.ReadOnly = true;
-            this.FECHADOC.Width = 78;
-            // 
-            // TIPODOCARN
-            // 
-            this.TIPODOCARN.DataPropertyName = "TIPODOCARN";
-            this.TIPODOCARN.HeaderText = "TIPODOCARN";
-            this.TIPODOCARN.Name = "TIPODOCARN";
-            this.TIPODOCARN.ReadOnly = true;
-            this.TIPODOCARN.Visible = false;
-            // 
-            // NUMDOCARN
-            // 
-            this.NUMDOCARN.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NUMDOCARN.DataPropertyName = "NUMDOCARN";
-            this.NUMDOCARN.FillWeight = 60F;
-            this.NUMDOCARN.HeaderText = "Pre Factura";
-            this.NUMDOCARN.Name = "NUMDOCARN";
-            this.NUMDOCARN.ReadOnly = true;
-            this.NUMDOCARN.Width = 87;
-            // 
-            // TIPODOCGP
-            // 
-            this.TIPODOCGP.DataPropertyName = "TIPODOCGP";
-            this.TIPODOCGP.HeaderText = "TIPODOCGP";
-            this.TIPODOCGP.Name = "TIPODOCGP";
-            this.TIPODOCGP.ReadOnly = true;
-            this.TIPODOCGP.Visible = false;
-            // 
-            // NUMDOCGP
-            // 
-            this.NUMDOCGP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.NUMDOCGP.DataPropertyName = "NUMDOCGP";
-            this.NUMDOCGP.FillWeight = 60F;
-            this.NUMDOCGP.HeaderText = "Factura GP";
-            this.NUMDOCGP.Name = "NUMDOCGP";
-            this.NUMDOCGP.ReadOnly = true;
-            this.NUMDOCGP.Width = 86;
-            // 
-            // IDCLIENTE
-            // 
-            this.IDCLIENTE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.IDCLIENTE.DataPropertyName = "IDCLIENTE";
-            this.IDCLIENTE.FillWeight = 60F;
-            this.IDCLIENTE.HeaderText = "Id Cliente";
-            this.IDCLIENTE.Name = "IDCLIENTE";
-            this.IDCLIENTE.ReadOnly = true;
-            this.IDCLIENTE.Width = 76;
-            // 
-            // COL8
-            // 
-            this.COL8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.COL8.DataPropertyName = "DOCSTATUS";
-            this.COL8.FillWeight = 60F;
-            this.COL8.HeaderText = "Estado";
-            this.COL8.Name = "COL8";
-            this.COL8.ReadOnly = true;
-            this.COL8.Width = 65;
-            // 
-            // OBSERVACIONES
-            // 
-            this.OBSERVACIONES.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.OBSERVACIONES.DataPropertyName = "OBSERVACIONES";
-            this.OBSERVACIONES.FillWeight = 60F;
-            this.OBSERVACIONES.HeaderText = "Referencia";
-            this.OBSERVACIONES.Name = "OBSERVACIONES";
-            this.OBSERVACIONES.Width = 84;
-            // 
-            // MENSAJE
-            // 
-            this.MENSAJE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.MENSAJE.DataPropertyName = "MENSAJE";
-            this.MENSAJE.FillWeight = 60F;
-            this.MENSAJE.HeaderText = "Mensaje";
-            this.MENSAJE.Name = "MENSAJE";
-            this.MENSAJE.Width = 72;
-            // 
-            // MENSAJELARGO
-            // 
-            this.MENSAJELARGO.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MENSAJELARGO.DataPropertyName = "MENSAJELARGO";
-            this.MENSAJELARGO.FillWeight = 337.4448F;
-            this.MENSAJELARGO.HeaderText = "Validaciones";
-            this.MENSAJELARGO.Name = "MENSAJELARGO";
-            this.MENSAJELARGO.ReadOnly = true;
+            this.anuleDespuesDeContabilizadaTsMenuItem.Name = "anuleDespuesDeContabilizadaTsMenuItem";
+            this.anuleDespuesDeContabilizadaTsMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.anuleDespuesDeContabilizadaTsMenuItem.Text = "Anulé la factura después de contabilizada";
+            this.anuleDespuesDeContabilizadaTsMenuItem.Click += new System.EventHandler(this.anuleDespuesDeContabilizadaTsMenuItem_Click);
             // 
             // winFormCompuertaGPBase
             // 
@@ -1201,6 +1222,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OBSERVACIONES;
         private System.Windows.Forms.DataGridViewTextBoxColumn MENSAJE;
         private System.Windows.Forms.DataGridViewTextBoxColumn MENSAJELARGO;
+        private System.Windows.Forms.ToolStripButton tsbActualizarStatus;
+        private System.Windows.Forms.ToolStripMenuItem anuleDespuesDeContabilizadaTsMenuItem;
     }
 }
 

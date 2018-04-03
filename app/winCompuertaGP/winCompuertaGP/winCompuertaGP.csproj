@@ -44,8 +44,9 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="IntegradorDeGP">
-      <HintPath>..\..\..\..\..\STD_IntegradorDeGP\IntegradorGeneralGP\IntegradorBaseDeGP\bin\Debug\IntegradorDeGP.dll</HintPath>
+    <Reference Include="IntegradorDeGP, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\STD_IntegraEconnectGP\dgp01\app\consolaIntegraGP\bin\Debug\IntegradorDeGP.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
