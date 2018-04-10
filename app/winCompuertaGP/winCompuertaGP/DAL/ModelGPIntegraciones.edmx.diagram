@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b3b9c613aa234d4294ce789e4e64c585" Name="Diagram1">
-        <EntityTypeShape EntityType="INTEGRAGPModel.vwIntegracionesVentas" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="INTEGRAGPModel.vwIntegracionesVentas" Width="3" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

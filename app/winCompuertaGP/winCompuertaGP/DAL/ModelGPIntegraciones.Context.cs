@@ -19,13 +19,7 @@ namespace winCompuertaGP.DAL
             : base("name=INTEGRAGPEntities")
         {
         }
-
-        //jcf Agregado para parametrizar conn string
-        public INTEGRAGPEntities(string connectionString)
-            : base(connectionString)
-        {
-        }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
