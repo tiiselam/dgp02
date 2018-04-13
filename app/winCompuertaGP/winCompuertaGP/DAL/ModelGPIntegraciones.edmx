@@ -4,12 +4,23 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="INTEGRAGPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="INTEGRAGPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwIntegracionesVentas">
           <Key>
             <PropertyRef Name="ID" />
+            
+            
+            
+            
+            
+            
+            <PropertyRef Name="DOCID_GP" />
+            
+            
+            
+            
           </Key>
           <Property Name="ID" Type="int" Nullable="false" />
           <Property Name="TIPODOCARN" Type="smallint" Nullable="false" />
@@ -20,6 +31,8 @@ warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does 
           <Property Name="IDCLIENTE" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="FECHADOC" Type="datetime" Nullable="false" />
           <Property Name="OBSERVACIONES" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DOCID_GP" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="SOPTYPE_GP" Type="smallint" />
           <Property Name="ESACTUAL" Type="smallint" Nullable="false" />
           <Property Name="USUARIO" Type="varchar" MaxLength="35" Nullable="false" />
           <Property Name="FECHAHORA" Type="datetime" Nullable="false" />
@@ -38,6 +51,8 @@ warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does 
     [vwIntegracionesVentas].[IDCLIENTE] AS [IDCLIENTE], 
     [vwIntegracionesVentas].[FECHADOC] AS [FECHADOC], 
     [vwIntegracionesVentas].[OBSERVACIONES] AS [OBSERVACIONES], 
+    [vwIntegracionesVentas].[DOCID_GP] AS [DOCID_GP], 
+    [vwIntegracionesVentas].[SOPTYPE_GP] AS [SOPTYPE_GP], 
     [vwIntegracionesVentas].[ESACTUAL] AS [ESACTUAL], 
     [vwIntegracionesVentas].[USUARIO] AS [USUARIO], 
     [vwIntegracionesVentas].[FECHAHORA] AS [FECHAHORA], 
@@ -46,14 +61,14 @@ warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does 
     FROM [compuertagp].[vwIntegracionesVentas] AS [vwIntegracionesVentas]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="INTEGRAGPModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="vwIntegracionesVentas">
           <Key>
             <PropertyRef Name="ID" />
+            <PropertyRef Name="DOCID_GP" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="TIPODOCARN" Type="Int16" Nullable="false" />
@@ -69,6 +84,8 @@ warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does 
           <Property Name="FECHAHORA" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="MENSAJE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MENSAJELARGO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DOCID_GP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="SOPTYPE_GP" Type="Int16" />
         </EntityType>
         <EntityContainer Name="INTEGRAGPEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="vwIntegracionesVentas" EntityType="Self.vwIntegracionesVentas" />
@@ -82,6 +99,8 @@ warning 6002: The table/view 'INTEGRA50.compuertagp.vwIntegracionesVentas' does 
           <EntitySetMapping Name="vwIntegracionesVentas">
             <EntityTypeMapping TypeName="INTEGRAGPModel.vwIntegracionesVentas">
               <MappingFragment StoreEntitySet="vwIntegracionesVentas">
+                <ScalarProperty Name="SOPTYPE_GP" ColumnName="SOPTYPE_GP" />
+                <ScalarProperty Name="DOCID_GP" ColumnName="DOCID_GP" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TIPODOCARN" ColumnName="TIPODOCARN" />
                 <ScalarProperty Name="NUMDOCARN" ColumnName="NUMDOCARN" />

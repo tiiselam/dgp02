@@ -28,5 +28,7 @@ namespace winCompuertaGP.DAL
         public System.DateTime FECHAHORA { get; set; }
         public string MENSAJE { get; set; }
         public string MENSAJELARGO { get; set; }
+        public string DOCID_GP { get; set; }
+        public Nullable<short> SOPTYPE_GP { get; set; }
     }
 }
