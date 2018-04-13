@@ -92,6 +92,8 @@
             this.toolStripAcciones4 = new System.Windows.Forms.ToolStrip();
             this.tsSplitBCambiarStatus = new System.Windows.Forms.ToolStripSplitButton();
             this.tsMenuItemCambiarAListo = new System.Windows.Forms.ToolStripMenuItem();
+            this.anuleDespuesDeContabilizadaTsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsbActualizarStatus = new System.Windows.Forms.ToolStripButton();
             this.toolStripAcciones3 = new System.Windows.Forms.ToolStrip();
             this.tsBtnIntegraFactura = new System.Windows.Forms.ToolStripButton();
             this.toolStripAcciones1 = new System.Windows.Forms.ToolStrip();
@@ -118,8 +120,6 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbActualizarStatus = new System.Windows.Forms.ToolStripButton();
-            this.anuleDespuesDeContabilizadaTsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.tsConfirma1.SuspendLayout();
@@ -478,7 +478,7 @@
             // 
             this.genFacturaElectrónicaV10ToolStripMenuItem.Name = "genFacturaElectrónicaV10ToolStripMenuItem";
             this.genFacturaElectrónicaV10ToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
-            this.genFacturaElectrónicaV10ToolStripMenuItem.Text = "Integraciones GP v. 1.0.0";
+            this.genFacturaElectrónicaV10ToolStripMenuItem.Text = "Integraciones GP v. 2.0.0";
             // 
             // toolStripMenuItem2
             // 
@@ -774,6 +774,23 @@
             this.tsMenuItemCambiarAListo.Text = "Eliminé la factura en GP";
             this.tsMenuItemCambiarAListo.Click += new System.EventHandler(this.tsMenuItemCambiarAListo_Click);
             // 
+            // anuleDespuesDeContabilizadaTsMenuItem
+            // 
+            this.anuleDespuesDeContabilizadaTsMenuItem.Name = "anuleDespuesDeContabilizadaTsMenuItem";
+            this.anuleDespuesDeContabilizadaTsMenuItem.Size = new System.Drawing.Size(292, 22);
+            this.anuleDespuesDeContabilizadaTsMenuItem.Text = "Anulé la factura después de contabilizada";
+            this.anuleDespuesDeContabilizadaTsMenuItem.Click += new System.EventHandler(this.anuleDespuesDeContabilizadaTsMenuItem_Click);
+            // 
+            // tsbActualizarStatus
+            // 
+            this.tsbActualizarStatus.Image = ((System.Drawing.Image)(resources.GetObject("tsbActualizarStatus.Image")));
+            this.tsbActualizarStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbActualizarStatus.Name = "tsbActualizarStatus";
+            this.tsbActualizarStatus.Size = new System.Drawing.Size(114, 20);
+            this.tsbActualizarStatus.Text = "Actualizar Status";
+            this.tsbActualizarStatus.ToolTipText = "Actualizar el status de las facturas contabilizadas";
+            this.tsbActualizarStatus.Click += new System.EventHandler(this.tsbActualizarStatus_Click);
+            // 
             // toolStripAcciones3
             // 
             this.toolStripAcciones3.AutoSize = false;
@@ -1059,23 +1076,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1127, 137);
             this.panel8.TabIndex = 81;
-            // 
-            // tsbActualizarStatus
-            // 
-            this.tsbActualizarStatus.Image = ((System.Drawing.Image)(resources.GetObject("tsbActualizarStatus.Image")));
-            this.tsbActualizarStatus.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbActualizarStatus.Name = "tsbActualizarStatus";
-            this.tsbActualizarStatus.Size = new System.Drawing.Size(114, 20);
-            this.tsbActualizarStatus.Text = "Actualizar Status";
-            this.tsbActualizarStatus.ToolTipText = "Actualizar el status de las facturas contabilizadas";
-            this.tsbActualizarStatus.Click += new System.EventHandler(this.tsbActualizarStatus_Click);
-            // 
-            // anuleDespuesDeContabilizadaTsMenuItem
-            // 
-            this.anuleDespuesDeContabilizadaTsMenuItem.Name = "anuleDespuesDeContabilizadaTsMenuItem";
-            this.anuleDespuesDeContabilizadaTsMenuItem.Size = new System.Drawing.Size(292, 22);
-            this.anuleDespuesDeContabilizadaTsMenuItem.Text = "Anulé la factura después de contabilizada";
-            this.anuleDespuesDeContabilizadaTsMenuItem.Click += new System.EventHandler(this.anuleDespuesDeContabilizadaTsMenuItem_Click);
             // 
             // winFormCompuertaGPBase
             // 
